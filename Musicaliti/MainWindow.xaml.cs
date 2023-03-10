@@ -117,7 +117,7 @@ namespace Musicaliti
         {
             media.Position = new TimeSpan(Convert.ToInt64(audioSliderr.Value));
             start_time.Text = new TimeSpan(Convert.ToInt64(audioSliderr.Value)).ToString(@"mm\:ss");
-            
+            last_time.Text = new TimeSpan(Convert.ToInt64(audioSliderr.Maximum - media.Position.Ticks)).ToString(@"mm\:ss");
 
         }
 
@@ -126,7 +126,7 @@ namespace Musicaliti
             
             audioSliderr.Maximum = media.NaturalDuration.TimeSpan.Ticks;
             
-            last_time.Text = new TimeSpan(Convert.ToInt64(audioSliderr.Maximum)).ToString(@"mm\:ss");
+            max_time.Text = new TimeSpan(Convert.ToInt64(audioSliderr.Maximum)).ToString(@"mm\:ss");
         }
 
         private void repeat_Click(object sender, RoutedEventArgs e)
